@@ -138,6 +138,14 @@ data:
 
   output.conf: |-
     <label @SPLUNK>
+      # filter to  remove empty lines
+      <filter tail.containers.**>
+        @type grep
+        <exclude>
+         key log
+         pattern ^$
+        </exclude>
+      </filter>
       # = filters for container logs =
       {{- range $name, $logDef := .Values.logs }}
       {{- if and $logDef.from.pod $logDef.multiline }}

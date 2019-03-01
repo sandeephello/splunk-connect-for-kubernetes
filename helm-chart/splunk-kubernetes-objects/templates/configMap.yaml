@@ -36,9 +36,7 @@ data:
       {{- if $.Values.kubernetes.clientKey }}
       client_key /fluentd/etc/splunk/k8s_client_key
       {{- end }}
-      {{- if $.Values.kubernetes.caFile }}
-      ca_file /fluentd/etc/splunk/k8s_ca_file
-      {{- end }}
+      ca_file /var/run/secrets/kubernetes.io/serviceaccount/ca.crt
       {{- with $.Values.kubernetes.bearerTokenFile }}
       bearer_token_file {{ . }}
       {{- end }}
