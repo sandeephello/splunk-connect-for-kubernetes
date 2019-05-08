@@ -14,6 +14,8 @@ global:
     hec:
       protocol: https
       insecureSSL: false
+    region:
+    environment:
 
 
 # logLevel is to set log level of the Splunk log collector. Avaiable values are:
@@ -85,7 +87,7 @@ journalLogPath: /run/log/journal
 #     journald:
 #       unit: docker.service
 # ```
-#   
+#
 # For `file` logs, `path` is required for specifying where is the log files. Log files are expected in `/var/log`, example:
 # ```
 # docker:
