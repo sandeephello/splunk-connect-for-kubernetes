@@ -215,7 +215,7 @@ data:
         hec_port {{ . }}
         {{- end }}
         hec_token "#{ENV['SPLUNK_HEC_TOKEN']}"
-        host {{ "#{ENV['SPLUNK_HEC_HOST']}" }}{{ "," }}{{ .Values.splunk.environment }}{{ "," }}{{ .Values.splunk.region }}
+        host {{ .Values.splunk.environment }}{{ "," }}{{ .Values.splunk.region }}
         source_key source
         sourcetype_key sourcetype
         {{- with or .Values.splunk.hec.indexName .Values.global.splunk.hec.indexName }}
